@@ -1,5 +1,6 @@
 module.exports = {
     plugins: [
+        `gatsby-plugin-sass`, 
         {
             resolve: `gatsby-source-sanity`,
             options: {
@@ -13,6 +14,6 @@ module.exports = {
                 // use `graphqlTag` to specify the tag name. Defaults to `default`.
                 graphqlTag: 'default',
             },
-        }
+        }, 
     ]
 }

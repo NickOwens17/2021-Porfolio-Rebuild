@@ -1,0 +1,76 @@
+.wrapper {
+  max-width: 1200px;
+  width: 90vw; 
+  // background-color: rebeccapurple;
+  position: relative;
+  left: 50%; 
+  transform: translateX(-50%);
+}
+
+.sectionWrapper {
+  position: relative;
+  height: 100vh;
+  width: 100vw;   
+  overflow: hidden;
+
+  .header {
+    position: absolute;
+    right: 4em;
+    top: 40vh;
+    z-index: 10;
+  }
+
+  .designBgElems {
+    position: absolute;
+    height: 100vh;
+    width: 90vw;
+    right: 0;
+
+    .exOneStyle {
+      position: absolute;
+      bottom: 0;
+    }
+
+    .exTwoStyle {
+      position: absolute;
+      bottom: 50vh;
+      left: 1em;
+    }
+
+    .exThreeStyle {
+      position: absolute;
+      bottom: 35vh;
+      left: 18em;
+    }
+
+    .exFourStyle {
+      position: absolute;
+      bottom: 20vh;
+      left: 40vw;
+    }
+
+    .exFiveStyle {
+      position: absolute;
+      bottom: 0;
+      left: 47vw;
+    }
+
+    .exSixStyle {
+      position: absolute;
+      top: 0;
+      left: 48vw;
+    }
+
+    .exSevenStyle {
+      position: absolute;
+      bottom: 5vh;
+      right: 0;
+    }
+
+    .exEightStyle {
+      position: absolute;
+      top: 5vh;
+      right: -15vw;
+    }
+  }
+}
