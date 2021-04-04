@@ -1,14 +1,16 @@
 import * as React from "react";
-import { HeroSection, HeroHeader } from "../components/hero";
+import { HeroHeader } from "../components/hero";
 import * as styles from "../styles/global.scss";
-import { DesignBackground } from "./DesignSection";
+import { DesignBackground } from "../components/DesignSection";
+import DevelopmentBackground from "../components/DevelopmentSection"
 import { wrapper, sectionWrapper, header } from "./index.module.scss";
 
 // markup
 const IndexPage = () => {
   return (
     <>
-      <DesignSection></DesignSection>
+      {/* <DesignSection></DesignSection> */}
+      <DevelopmentSection></DevelopmentSection>
     </>
   );
 };
@@ -23,4 +25,19 @@ const DesignSection = () => {
     </div>
   );
 };
+
+const DevelopmentSection = () => {
+  return (
+    <div className={sectionWrapper}>
+      <div className={header}>
+        <HeroHeader head="Develop" subhead="view work" />
+      </div>
+      <DevelopmentBackground></DevelopmentBackground>
+    </div>
+  );
+};
+
+
+
+
 export default IndexPage;

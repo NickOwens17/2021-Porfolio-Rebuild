@@ -9,7 +9,7 @@ import {
   exSixStyle,
   exSevenStyle,
   exEightStyle,
-} from "./designBackground.module.scss";
+} from "../styles/DesignSection.module.scss";
 import { motion } from "framer-motion";
 
 const exOne = (
