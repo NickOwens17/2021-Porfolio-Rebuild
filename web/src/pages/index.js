@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState} from "react";
 import { HeroHeader } from "../components/hero";
 import * as styles from "../styles/global.scss";
 import { DesignBackground } from "../components/DesignSection";
@@ -7,10 +7,11 @@ import { wrapper, sectionWrapper, header } from "./index.module.scss";
 
 // markup
 const IndexPage = () => {
+  const [activeIndex, setActiveIndex] = useState(1);
+  
   return (
     <>
-      {/* <DesignSection></DesignSection> */}
-      <DevelopmentSection></DevelopmentSection>
+      {activeIndex === 1 ? DesignSection() : activeIndex == 2 ? DevelopmentSection() : activeIndex == 3 ? DevelopmentSection() : null}
     </>
   );
 };
@@ -37,6 +38,15 @@ const DevelopmentSection = () => {
   );
 };
 
+const ExploreSection = () => {
+  return (
+    <div className={sectionWrapper}>
+      <div className={header}>
+        <HeroHeader head="Explore" subhead="view work" />
+      </div>
+    </div>
+  );
+};
 
 
 

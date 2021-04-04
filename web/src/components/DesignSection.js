@@ -204,6 +204,8 @@ const exEight = (
   </motion.div>
 );
 
+
+//TODO: add orchestration -- parent div should control 
 export const DesignBackground = () => {
   return (
     <div className={designBgElems}>
