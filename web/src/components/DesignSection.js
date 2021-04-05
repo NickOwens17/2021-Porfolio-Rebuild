@@ -12,13 +12,29 @@ import {
 } from "../styles/DesignSection.module.scss";
 import { motion } from "framer-motion";
 
+const excVariants = {
+  visible: {
+    opacity: 1, 
+    x: 0,
+    y: 0
+  },
+  hidden: ({x, y}) => ({
+    opacity: 1,
+    x: x,
+    y: y,
+    transition: {
+      delay: 0.4,
+      duration: 0.6,
+    }
+  }),
+}
+
 const exOne = (
   <motion.div
     className={exOneStyle}
-    initial={{ opacity: 0.7, x: -300, y: 300 }}
-    animate={{ opacity: 1, x: 0, y: 0 }}
-    transition={{ duration: 0.6, ease: "backIn", delay: 0.4 }}
-  >
+    variants={excVariants}
+    custom={{x: -300, y: 300}}
+    >
     <svg
       width="696"
       height="307"
@@ -39,9 +55,8 @@ const exOne = (
 const exTwo = (
   <motion.div
     className={exTwoStyle}
-    initial={{ opacity: 0.7, x: -300, y: -600 }}
-    animate={{ opacity: 1, x: 0, y: 0 }}
-    transition={{ duration: 0.6, ease: "backIn", delay: 0.4 }}
+    variants={excVariants}
+    custom={{x: -300, y: -600}}
   >
     <svg
       width="252"
@@ -63,9 +78,8 @@ const exTwo = (
 const exThree = (
   <motion.div
     className={exThreeStyle}
-    initial={{ opacity: 0.7, x: 1200, y: -600 }}
-    animate={{ opacity: 1, x: 0, y: 0 }}
-    transition={{ duration: 0.6, ease: "backIn", delay: 0.4 }}
+    variants={excVariants}
+    custom={{x: 1200, y: -600}}
   >
     <svg
       width="392"
@@ -87,9 +101,8 @@ const exThree = (
 const exFour = (
   <motion.div
     className={exFourStyle}
-    initial={{ opacity: 0.7, x: -50, y: 600 }}
-    animate={{ opacity: 1, x: 0, y: 0 }}
-    transition={{ duration: 0.6, ease: "backIn", delay: 0.4 }}
+    variants={excVariants}
+    custom={{x: -50, y: 600}}
   >
     <svg
       width="346"
@@ -111,9 +124,8 @@ const exFour = (
 const exFive = (
   <motion.div
     className={exFiveStyle}
-    initial={{ opacity: 0.7, x: 20, y: 400 }}
-    animate={{ opacity: 1, x: 0, y: 0 }}
-    transition={{ duration: 0.6, ease: "backIn", delay: 0.4 }}
+    variants={excVariants}
+    custom={{x: 20, y: 400}}
   >
     <svg
       width="561"
@@ -135,9 +147,8 @@ const exFive = (
 const exSix = (
   <motion.div
     className={exSixStyle}
-    initial={{ opacity: 0.7, x: 20, y: -600 }}
-    animate={{ opacity: 1, x: 0, y: 0 }}
-    transition={{ duration: 0.6, ease: "backIn", delay: 0.4 }}
+    variants={excVariants}
+    custom={{x: 20, y: -600}}
   >
     <svg
       width="619"
@@ -159,9 +170,8 @@ const exSix = (
 const exSeven = (
   <motion.div
     className={exSevenStyle}
-    initial={{ opacity: 0.7, x: 600, y: 100 }}
-    animate={{ opacity: 1, x: 0, y: 0 }}
-    transition={{ duration: 0.6, ease: "backIn", delay: 0.4 }}
+    variants={excVariants}
+    custom={{x: 600, y: 100}}
   >
     <svg
       width="307"
@@ -183,9 +193,8 @@ const exSeven = (
 const exEight = (
   <motion.div
     className={exEightStyle}
-    initial={{ opacity: 0.7, x: -500, y: -800 }}
-    animate={{ opacity: 1, x: 0, y: 0 }}
-    transition={{ duration: 0.6, ease: "backIn", delay: 0.4 }}
+    variants={excVariants}
+    custom={{x: -500, y: -800}}
   >
     <svg
       width="382"
@@ -219,10 +228,12 @@ const containerVariants = {
     },
   },
 }
-//TODO: add orchestration -- parent div should control 
+
 export const DesignBackground = () => {
   return (
-    <motion.div className={designBgElems}>
+    <motion.div className={designBgElems} 
+      variants={containerVariants} initial="hidden" animate="visible"
+    >
       {exOne}
       {exTwo}
       {exThree}
