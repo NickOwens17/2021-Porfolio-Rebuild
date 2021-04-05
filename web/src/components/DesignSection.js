@@ -14,27 +14,27 @@ import { motion } from "framer-motion";
 
 const excVariants = {
   visible: {
-    opacity: 1, 
+    opacity: 1,
     x: 0,
-    y: 0
+    y: 0,
   },
-  hidden: ({x, y}) => ({
+  hidden: ({ x, y }) => ({
     opacity: 1,
     x: x,
     y: y,
     transition: {
       delay: 0.4,
       duration: 0.6,
-    }
+    },
   }),
-}
+};
 
 const exOne = (
   <motion.div
     className={exOneStyle}
     variants={excVariants}
-    custom={{x: -300, y: 300}}
-    >
+    custom={{ x: -300, y: 300 }}
+  >
     <svg
       width="696"
       height="307"
@@ -56,7 +56,7 @@ const exTwo = (
   <motion.div
     className={exTwoStyle}
     variants={excVariants}
-    custom={{x: -300, y: -600}}
+    custom={{ x: -300, y: -600 }}
   >
     <svg
       width="252"
@@ -79,7 +79,7 @@ const exThree = (
   <motion.div
     className={exThreeStyle}
     variants={excVariants}
-    custom={{x: 1200, y: -600}}
+    custom={{ x: 1200, y: -600 }}
   >
     <svg
       width="392"
@@ -102,7 +102,7 @@ const exFour = (
   <motion.div
     className={exFourStyle}
     variants={excVariants}
-    custom={{x: -50, y: 600}}
+    custom={{ x: -50, y: 600 }}
   >
     <svg
       width="346"
@@ -125,7 +125,7 @@ const exFive = (
   <motion.div
     className={exFiveStyle}
     variants={excVariants}
-    custom={{x: 20, y: 400}}
+    custom={{ x: 20, y: 400 }}
   >
     <svg
       width="561"
@@ -148,7 +148,7 @@ const exSix = (
   <motion.div
     className={exSixStyle}
     variants={excVariants}
-    custom={{x: 20, y: -600}}
+    custom={{ x: 20, y: -600 }}
   >
     <svg
       width="619"
@@ -171,7 +171,7 @@ const exSeven = (
   <motion.div
     className={exSevenStyle}
     variants={excVariants}
-    custom={{x: 600, y: 100}}
+    custom={{ x: 600, y: 100 }}
   >
     <svg
       width="307"
@@ -194,7 +194,7 @@ const exEight = (
   <motion.div
     className={exEightStyle}
     variants={excVariants}
-    custom={{x: -500, y: -800}}
+    custom={{ x: -500, y: -800 }}
   >
     <svg
       width="382"
@@ -227,12 +227,15 @@ const containerVariants = {
       when: "afterChildren",
     },
   },
-}
+};
 
 export const DesignBackground = () => {
   return (
-    <motion.div className={designBgElems} 
-      variants={containerVariants} initial="hidden" animate="visible"
+    <motion.div
+      className={designBgElems}
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
     >
       {exOne}
       {exTwo}
