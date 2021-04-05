@@ -204,11 +204,25 @@ const exEight = (
   </motion.div>
 );
 
-
+const containerVariants = {
+  visible: {
+    opacity: 1,
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.1,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    transition: {
+      when: "afterChildren",
+    },
+  },
+}
 //TODO: add orchestration -- parent div should control 
 export const DesignBackground = () => {
   return (
-    <div className={designBgElems}>
+    <motion.div className={designBgElems}>
       {exOne}
       {exTwo}
       {exThree}
@@ -217,6 +231,6 @@ export const DesignBackground = () => {
       {exSix}
       {exSeven}
       {exEight}
-    </div>
+    </motion.div>
   );
 };
