@@ -68,11 +68,11 @@ const IndexPage = () => {
       </div>
 
       {activeIndex === 0
-        ? DesignBackground()
+        ? (<DesignBackground/>)
         : activeIndex === 1
-        ? DevelopmentBackground()
+        ? (<DevelopmentBackground/>)
         : activeIndex === 2
-        ? DevelopmentBackground()
+        ? (<DevelopmentBackground/>)
         : null}
     </div>
   );
